@@ -1,0 +1,1362 @@
+### Example Tool Config
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Configuration for the example tool.
+
+```APIDOC
+## Example Tool Config
+
+### Description
+Configuration for the example tool.
+
+### Properties
+- `examples` (list): Example usage of the tool.
+```
+
+--------------------------------
+
+### Example Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A sample tool for demonstration purposes.
+
+```APIDOC
+## Example Tool
+
+### Description
+A sample tool for demonstration purposes.
+
+### Properties
+- `examples` (list): Example usage of the tool.
+
+### Methods
+- `from_config(config)`: Creates an ExampleTool instance from configuration.
+- `process_llm_request(request)`: Processes an LLM request for the example tool.
+```
+
+--------------------------------
+
+### get_user_choice Function
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A function to get user choice.
+
+```APIDOC
+## get_user_choice Function
+
+### Description
+A function to get user choice.
+```
+
+--------------------------------
+
+### ToolboxToolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A toolset for managing a collection of tools, providing methods to get and close the toolset.
+
+```APIDOC
+## ToolboxToolset
+
+### Description
+A toolset for managing a collection of tools.
+
+### Methods
+- **close()**
+  Closes the toolset.
+- **get_tools() -> list**
+  Retrieves all tools in the toolset.
+```
+
+--------------------------------
+
+### Stdio Connection Params
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Parameters for establishing a stdio connection.
+
+```APIDOC
+## Stdio Connection Params
+
+### Description
+Parameters for establishing a stdio connection.
+
+### Properties
+- `server_params`: Parameters for the server connection.
+- `timeout` (float): The timeout for the connection in seconds.
+```
+
+--------------------------------
+
+### Tools Package
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Overview of the `tools` package, including various tool implementations like `AgentTool`, `FunctionTool`, and `VertexAiSearchTool`.
+
+```APIDOC
+## Tools Package
+
+### Description
+Contains various tool implementations that can be used by agents, including utility tools and specific integrations.
+
+### Classes
+#### `APIHubToolset`
+- **Methods**:
+  - `close()`
+  - `get_tools()`
+
+#### `AgentTool`
+- **Properties**:
+  - `agent`
+  - `skip_summarization`
+- **Methods**:
+  - `from_config()`
+  - `populate_name()`
+  - `run_async()`
+
+#### `AuthToolArguments`
+- **Properties**:
+  - `auth_config`
+  - `function_call_id`
+
+#### `BaseTool`
+- **Properties**:
+  - `custom_metadata`
+  - `description`
+  - `is_long_running`
+  - `name`
+- **Methods**:
+  - `from_config()`
+  - `process_llm_request()`
+  - `run_async()`
+
+#### `ExampleTool`
+- **Properties**:
+  - `examples`
+- **Methods**:
+  - `from_config()`
+  - `process_llm_request()`
+
+#### `FunctionTool`
+- **Properties**:
+  - `func`
+- **Methods**:
+  - `run_async()`
+
+#### `LongRunningFunctionTool`
+- **Properties**:
+  - `is_long_running`
+
+#### `MCPToolset`
+
+#### `ToolContext`
+- **Properties**:
+  - `invocation_context`
+  - `function_call_id`
+  - `event_actions`
+  - `tool_confirmation`
+  - `actions`
+- **Methods**:
+  - `get_auth_response()`
+  - `request_confirmation()`
+  - `request_credential()`
+  - `search_memory()`
+
+#### `VertexAiSearchTool`
+- **Properties**:
+  - `data_store_id`
+  - `search_engine_id`
+- **Methods**:
+  - `process_llm_request()`
+
+### Functions
+- `exit_loop()`
+- `transfer_to_agent()`
+```
+
+--------------------------------
+
+### Sse Connection Params
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Parameters for establishing an SSE (Server-Sent Events) connection.
+
+```APIDOC
+## SSE Connection Params
+
+### Description
+Parameters for establishing an SSE (Server-Sent Events) connection.
+
+### Properties
+- `url` (str): The URL for the SSE connection.
+- `timeout` (float): The timeout for the connection in seconds.
+- `sse_read_timeout` (float): The read timeout specifically for SSE in seconds.
+- `headers` (dict): Optional headers to include in the connection request.
+```
+
+--------------------------------
+
+### Load Artifacts Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Tool for loading artifacts.
+
+```APIDOC
+## Load Artifacts Tool
+
+### Description
+Tool for loading artifacts.
+
+### Properties
+- `description` (str): Description of the tool.
+- `name` (str): Name of the tool.
+
+### Methods
+- `process_llm_request(request)`: Processes an LLM request to load artifacts.
+- `run_async()`: Loads artifacts asynchronously.
+```
+
+--------------------------------
+
+### Integration Connector Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool for connecting to and running integrations.
+
+```APIDOC
+## Integration Connector Tool
+
+### Description
+A tool for connecting to and running integrations.
+
+### Properties
+- `EXCLUDE_FIELDS` (list): Fields to exclude during integration.
+- `OPTIONAL_FIELDS` (list): Optional fields for the integration.
+
+### Methods
+- `run_async()`: Runs the integration asynchronously.
+```
+
+--------------------------------
+
+### Load Memory Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Tool for loading memory.
+
+```APIDOC
+## Load Memory Tool
+
+### Description
+Tool for loading memory.
+
+### Methods
+- `process_llm_request(request)`: Processes an LLM request to load memory.
+```
+
+--------------------------------
+
+### RunConfig
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Details of the RunConfig class for configuring agent execution.
+
+```APIDOC
+## RunConfig
+
+**Description**: Configuration options for running agents.
+
+**Methods**:
+- `validate_max_llm_calls()`
+
+**Properties**:
+- `enable_affective_dialog` (bool)
+- `input_audio_transcription` (bool)
+- `max_llm_calls` (int)
+- `output_audio_transcription` (bool)
+- `proactivity` (ProactivityConfig)
+- `realtime_input_config` (RealtimeInputConfig)
+- `response_modalities` (list[str])
+- `save_input_blobs_as_artifacts` (bool)
+- `session_resumption` (SessionResumptionConfig)
+- `speech_config` (SpeechConfig)
+- `streaming_mode` (StreamingMode)
+- `support_cfc` (bool)
+```
+
+--------------------------------
+
+### Sessions Module
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Reference for the `sessions` module, including `BaseSessionService`, `DatabaseSessionService`, `InMemorySessionService`, `Session`, `State`, and `VertexAiSessionService`.
+
+```APIDOC
+## Sessions Module
+
+### Description
+Manages session data, including creation, retrieval, and event appending for different session service implementations.
+
+### Classes
+#### `BaseSessionService`
+- **Methods**:
+  - `append_event()`
+  - `create_session()`
+  - `delete_session()`
+  - `get_session()`
+  - `list_sessions()`
+
+#### `DatabaseSessionService`
+- **Methods**:
+  - `append_event()`
+  - `create_session()`
+  - `delete_session()`
+  - `get_session()`
+  - `list_sessions()`
+
+#### `InMemorySessionService`
+- **Methods**:
+  - `append_event()`
+  - `create_session()`
+  - `create_session_sync()`
+  - `delete_session()`
+  - `delete_session_sync()`
+  - `get_session()`
+  - `get_session_sync()`
+  - `list_sessions()`
+  - `list_sessions_sync()`
+
+#### `Session`
+- **Properties**:
+  - `id`
+  - `app_name`
+  - `user_id`
+  - `state`
+  - `events`
+  - `last_update_time`
+
+#### `State`
+- **Constants**:
+  - `APP_PREFIX`
+  - `TEMP_PREFIX`
+  - `USER_PREFIX`
+- **Methods**:
+  - `get()`
+  - `has_delta()`
+  - `setdefault()`
+  - `to_dict()`
+  - `update()`
+
+#### `VertexAiSessionService`
+- **Methods**:
+  - `append_event()`
+  - `create_session()`
+  - `delete_session()`
+  - `get_session()`
+  - `list_sessions()`
+```
+
+--------------------------------
+
+### Langchain Tool Config
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Configuration for the Langchain tool.
+
+```APIDOC
+## Langchain Tool Config
+
+### Description
+Configuration for the Langchain tool.
+
+### Properties
+- `description` (str): Description of the Langchain tool.
+- `name` (str): Name of the Langchain tool.
+- `tool`: The Langchain tool object.
+```
+
+--------------------------------
+
+### Agent Classes
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Documentation for various agent classes within the google.adk.agents module.
+
+```APIDOC
+## Agent Classes
+
+### BaseAgent
+
+**Description**: Represents the base class for all agents, providing core functionalities and callback management.
+
+**Methods**:
+- `after_agent_callback()`
+- `before_agent_callback()`
+- `from_config()`
+- `validate_name()`
+- `clone()`
+- `find_agent()`
+- `find_sub_agent()`
+- `model_post_init()`
+- `run_async()`
+- `run_live()`
+
+**Properties**:
+- `description` (str)
+- `name` (str)
+- `parent_agent` (BaseAgent)
+- `sub_agents` (list[BaseAgent])
+- `config_type` (type)
+- `canonical_after_agent_callbacks` (list)
+- `canonical_before_agent_callbacks` (list)
+- `root_agent` (BaseAgent)
+
+### LlmAgent
+
+**Description**: An agent specifically designed for Large Language Model interactions, including tool usage and content generation.
+
+**Methods**:
+- `after_model_callback()`
+- `after_tool_callback()`
+- `before_model_callback()`
+- `before_tool_callback()`
+- `validate_generate_content_config()`
+- `canonical_global_instruction()`
+- `canonical_instruction()`
+- `canonical_tools()`
+- `canonical_after_model_callbacks()`
+- `canonical_after_tool_callbacks()`
+- `canonical_before_model_callbacks()`
+- `canonical_before_tool_callbacks()`
+- `canonical_model()`
+
+**Properties**:
+- `code_executor` (CodeExecutor)
+- `disallow_transfer_to_parent` (bool)
+- `disallow_transfer_to_peers` (bool)
+- `generate_content_config` (GenerateContentConfig)
+- `global_instruction` (str)
+- `include_contents` (list)
+- `input_schema` (Schema)
+- `instruction` (str)
+- `model` (Model)
+- `output_key` (str)
+- `output_schema` (Schema)
+- `planner` (Planner)
+- `tools` (list[Tool])
+- `config_type` (type)
+
+### LoopAgent
+
+**Description**: An agent that executes tasks in a loop, with a configurable maximum number of iterations.
+
+**Properties**:
+- `max_iterations` (int)
+- `config_type` (type)
+
+### ParallelAgent
+
+**Description**: An agent that executes tasks in parallel.
+
+**Properties**:
+- `config_type` (type)
+
+### SequentialAgent
+
+**Description**: An agent that executes tasks sequentially.
+
+**Properties**:
+- `config_type` (type)
+```
+
+--------------------------------
+
+### LiveRequest and LiveRequestQueue
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Documentation for LiveRequest and LiveRequestQueue for handling real-time requests.
+
+```APIDOC
+## LiveRequest and LiveRequestQueue
+
+### LiveRequest
+
+**Description**: Represents a single real-time request.
+
+**Properties**:
+- `activity_end` (datetime)
+- `activity_start` (datetime)
+- `blob` (bytes)
+- `content` (str)
+
+**Methods**:
+- `close()`
+
+### LiveRequestQueue
+
+**Description**: Manages a queue for sending live requests.
+
+**Methods**:
+- `close()`
+- `get()`
+- `send()`
+- `send_activity_end()`
+- `send_activity_start()`
+- `send_content()`
+- `send_realtime()`
+```
+
+--------------------------------
+
+### Runners Module
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Documentation for the `runners` module, detailing `InMemoryRunner` and `Runner` classes and their properties/methods.
+
+```APIDOC
+## Runners Module
+
+### Description
+This module provides classes for running and managing agents and their execution contexts.
+
+### Classes
+#### `InMemoryRunner`
+- **Properties**:
+  - `agent`
+  - `app_name`
+  - `_in_memory_session_service`
+
+#### `Runner`
+- **Properties**:
+  - `app_name`
+  - `agent`
+  - `artifact_service`
+  - `plugin_manager`
+  - `session_service`
+  - `memory_service`
+  - `credential_service`
+
+### Methods
+- `Runner.close()`
+- `Runner.run()`
+- `Runner.run_async()`
+- `Runner.run_live()`
+```
+
+--------------------------------
+
+### Application Integration Toolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Facilitates interaction with application integration services.
+
+```APIDOC
+## Application Integration Toolset
+
+### Description
+Facilitates interaction with application integration services.
+
+### Methods
+- `close()`: Closes the Application Integration toolset.
+- `get_tools()`: Retrieves the available tools within the Application Integration toolset.
+```
+
+--------------------------------
+
+### Base Toolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Base class for toolsets.
+
+```APIDOC
+## Base Toolset
+
+### Description
+Base class for toolsets.
+
+### Methods
+- `close()`: Closes the toolset.
+- `from_config(config)`: Creates a toolset instance from a configuration object.
+- `get_tools()`: Retrieves all tools within the toolset.
+- `get_tools_with_prefix(prefix)`: Retrieves tools with a specific prefix.
+- `process_llm_request(request)`: Processes a request from a large language model for all tools in the set.
+```
+
+--------------------------------
+
+### BigQuery Toolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Provides access to BigQuery tools.
+
+```APIDOC
+## BigQuery Toolset
+
+### Description
+Provides access to BigQuery tools.
+
+### Methods
+- `close()`: Closes the BigQuery toolset.
+- `get_tools()`: Retrieves the available tools within the BigQuery toolset.
+```
+
+--------------------------------
+
+### Google API Toolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Toolset for managing various Google API tools.
+
+```APIDOC
+## Google API Toolset
+
+### Description
+Toolset for managing various Google API tools.
+
+### Methods
+- `close()`: Closes the Google API toolset.
+- `configure_auth(credentials)`: Configures authentication for all tools in the toolset.
+- `configure_sa_auth(service_account_file)`: Configures service account authentication for all tools.
+- `get_tools()`: Retrieves all Google API tools within the toolset.
+- `set_tool_filter(tool_filter)`: Sets a filter for the tools to be included.
+```
+
+--------------------------------
+
+### BigQuery Credentials Config
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Configuration for BigQuery credentials.
+
+```APIDOC
+## BigQuery Credentials Config
+
+### Description
+Configuration for BigQuery credentials.
+
+### Methods
+- `model_post_init()`: Post-initialization hook for model configuration.
+```
+
+--------------------------------
+
+### Load Memory Response
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Response object for loading memory.
+
+```APIDOC
+## Load Memory Response
+
+### Description
+Response object for loading memory.
+
+### Properties
+- `memories` (list): A list of loaded memories.
+```
+
+--------------------------------
+
+### Base Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Base class for all tools in the ADK.
+
+```APIDOC
+## Base Tool
+
+### Description
+Base class for all tools in the ADK.
+
+### Properties
+- `custom_metadata` (dict): Custom metadata associated with the tool.
+- `description` (str): A description of the tool's functionality.
+- `is_long_running` (bool): Indicates if the tool is long-running.
+- `name` (str): The name of the tool.
+
+### Methods
+- `from_config(config)`: Creates a tool instance from a configuration object.
+- `process_llm_request(request)`: Processes a request from a large language model.
+- `run_async(request)`: Executes the tool's action asynchronously.
+```
+
+--------------------------------
+
+### BasePlugin Callbacks
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+This section outlines the callback methods available on the BasePlugin class for event handling within the ADK framework.
+
+```APIDOC
+## BasePlugin Callbacks
+
+### Description
+Provides hooks for various stages of agent execution, allowing for custom logic and event handling.
+
+### Methods
+- `after_tool_callback()`
+- `before_agent_callback()`
+- `before_model_callback()`
+- `before_run_callback()`
+- `before_tool_callback()`
+- `on_event_callback()`
+- `on_model_error_callback()`
+- `on_tool_error_callback()`
+- `on_user_message_callback()`
+```
+
+--------------------------------
+
+### PreloadMemoryTool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool for preloading data into the tool's memory for faster access.
+
+```APIDOC
+## PreloadMemoryTool
+
+### Description
+A tool for preloading data into memory.
+
+### Methods
+- **process_llm_request(request: str) -> str**
+  Processes an LLM request with preloaded memory.
+
+### Properties
+- **description**: str - A description of the tool.
+- **name**: str - The name of the tool.
+```
+
+--------------------------------
+
+### OpenAPIToolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A toolset for working with OpenAPI specifications, allowing retrieval of tools and closing the toolset.
+
+```APIDOC
+## OpenAPIToolset
+
+### Description
+A toolset for interacting with OpenAPI specifications.
+
+### Methods
+- **close()**
+  Closes the OpenAPI toolset.
+- **get_tool(name: str)**
+  Retrieves a specific tool by name.
+- **get_tools() -> list**
+  Retrieves all available tools.
+```
+
+--------------------------------
+
+### Crewai Tool Config
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Configuration for the CrewAI tool.
+
+```APIDOC
+## Crewai Tool Config
+
+### Description
+Configuration for the CrewAI tool.
+
+### Properties
+- `description` (str): Description of the CrewAI tool.
+- `name` (str): Name of the CrewAI tool.
+- `tool`: The CrewAI tool object.
+```
+
+--------------------------------
+
+### VertexAiSearchTool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool for performing searches using Vertex AI Search capabilities.
+
+```APIDOC
+## VertexAiSearchTool
+
+### Description
+A tool for performing searches using Vertex AI.
+
+### Methods
+- **process_llm_request(request: str) -> str**
+  Processes an LLM request by performing a search.
+
+### Properties
+- **data_store_id**: str - The ID of the data store to search.
+- **search_engine_id**: str - The ID of the search engine to use.
+```
+
+--------------------------------
+
+### BaseRetrievalTool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+The base class for retrieval tools, defining common properties like name and description.
+
+```APIDOC
+## BaseRetrievalTool
+
+### Description
+Base class for retrieval tools.
+
+### Properties
+- **description**: str - A description of the retrieval tool.
+- **name**: str - The name of the retrieval tool.
+```
+
+--------------------------------
+
+### Google API Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Base tool for interacting with Google APIs.
+
+```APIDOC
+## Google API Tool
+
+### Description
+Base tool for interacting with Google APIs.
+
+### Properties
+- `description` (str): Description of the Google API tool.
+- `name` (str): Name of the Google API tool.
+
+### Methods
+- `configure_auth(credentials)`: Configures authentication for the tool.
+- `configure_sa_auth(service_account_file)`: Configures service account authentication.
+- `run_async(request)`: Executes the Google API call asynchronously.
+```
+
+--------------------------------
+
+### Artifact Classes
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Documentation for artifact management classes within the google.adk.artifacts module.
+
+```APIDOC
+## Artifact Classes
+
+### BaseArtifactService
+
+**Description**: Abstract base class for artifact storage services.
+
+**Methods**:
+- `delete_artifact(key: str, version: str = None)`
+- `list_artifact_keys(prefix: str = None)`
+- `list_versions(key: str)`
+- `load_artifact(key: str, version: str = None)`
+- `save_artifact(blob: bytes, key: str, version: str = None)`
+
+### GcsArtifactService
+
+**Description**: Artifact service implementation using Google Cloud Storage.
+
+**Methods**:
+- `delete_artifact(key: str, version: str = None)`
+- `list_artifact_keys(prefix: str = None)`
+- `list_versions(key: str)`
+- `load_artifact(key: str, version: str = None)`
+- `save_artifact(blob: bytes, key: str, version: str = None)`
+
+### InMemoryArtifactService
+
+**Description**: In-memory artifact service for testing and development.
+
+**Properties**:
+- `artifacts` (dict[str, dict[str, bytes]]) - Internal storage for artifacts.
+
+**Methods**:
+- `delete_artifact(key: str, version: str = None)`
+- `list_artifact_keys(prefix: str = None)`
+- `list_versions(key: str)`
+- `load_artifact(key: str, version: str = None)`
+- `save_artifact(blob: bytes, key: str, version: str = None)`
+```
+
+--------------------------------
+
+### Langchain Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool that wraps a Langchain tool.
+
+```APIDOC
+## Langchain Tool
+
+### Description
+A tool that wraps a Langchain tool.
+
+### Methods
+- `from_config(config)`: Creates a LangchainTool instance from a configuration.
+```
+
+--------------------------------
+
+### AgentTool Module
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Specific details for the `AgentTool` and `AgentToolConfig` classes within the `tools.agent_tool` module.
+
+```APIDOC
+## AgentTool Module
+
+### Description
+Contains the `AgentTool` class for integrating agents as tools and `AgentToolConfig` for its configuration.
+
+### Classes
+#### `AgentTool`
+- **Properties**:
+  - `agent`
+  - `skip_summarization`
+- **Methods**:
+  - `from_config()`
+  - `populate_name()`
+  - `run_async()`
+
+#### `AgentToolConfig`
+- **Properties**:
+  - `agent`
+```
+
+--------------------------------
+
+### RestApiTool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Provides functionality for interacting with RESTful APIs. It allows for configuring authentication, calling API endpoints, and managing tool descriptions.
+
+```APIDOC
+## RestApiTool
+
+### Description
+A tool for interacting with RESTful APIs.
+
+### Methods
+- **call(request: google.adk.tools.openapi_tool.HttpRequest) -> google.adk.tools.openapi_tool.HttpResponse**
+  Calls a REST API endpoint.
+- **configure_auth_credential(credential: google.adk.tools.openapi_tool.AuthCredential)**
+  Configures authentication credentials for the tool.
+- **configure_auth_scheme(scheme: google.adk.tools.openapi_tool.AuthScheme)**
+  Configures the authentication scheme for the tool.
+
+### Properties
+- **description**: str - A description of the tool.
+- **name**: str - The name of the tool.
+```
+
+--------------------------------
+
+### APIHub Toolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Provides access to the APIHub toolset for interacting with APIs.
+
+```APIDOC
+## APIHub Toolset
+
+### Description
+Provides access to the APIHub toolset for interacting with APIs.
+
+### Methods
+- `close()`: Closes the APIHub toolset.
+- `get_tools()`: Retrieves the available tools within the APIHub toolset.
+```
+
+--------------------------------
+
+### StreamableHTTPConnectionParams
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Parameters for configuring streamable HTTP connections, including URL, headers, and timeouts.
+
+```APIDOC
+## StreamableHTTPConnectionParams
+
+### Description
+Parameters for configuring streamable HTTP connections.
+
+### Properties
+- **headers**: dict - Headers to include in the HTTP request.
+- **sse_read_timeout**: float - Timeout for reading Server-Sent Events.
+- **terminate_on_close**: bool - Whether to terminate the connection on close.
+- **timeout**: float - The connection timeout.
+```
+
+--------------------------------
+
+### MCP Toolset
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Toolset for managing MCP (Message Communication Protocol) related operations.
+
+```APIDOC
+## MCP Toolset
+
+### Description
+Toolset for managing MCP (Message Communication Protocol) related operations.
+
+### Methods
+- `close()`: Closes the MCP toolset.
+- `from_config(config)`: Creates an MCPToolset instance from configuration.
+- `get_tools()`: Retrieves all MCP tools within the toolset.
+```
+
+--------------------------------
+
+### load_web_page Function
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Function to load a web page.
+
+```APIDOC
+## load_web_page Function
+
+### Description
+Function to load a web page.
+```
+
+--------------------------------
+
+### Telemetry Module
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Details the functions available in the `telemetry` module for tracing and sending data.
+
+```APIDOC
+## Telemetry Module
+
+### Description
+Provides functions for tracing various operations within the ADK framework, such as LLM calls and tool usage.
+
+### Functions
+- `trace_call_llm()`
+- `trace_merged_tool_calls()`
+- `trace_send_data()`
+- `trace_tool_call()`
+```
+
+--------------------------------
+
+### Base Authenticated Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Base class for authenticated tools.
+
+```APIDOC
+## Base Authenticated Tool
+
+### Description
+Base class for authenticated tools.
+
+### Methods
+- `run_async()`: Executes the tool's action asynchronously.
+```
+
+--------------------------------
+
+### ToolContext
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Manages the context of tool invocations, including invocation details, event actions, and tool confirmations.
+
+```APIDOC
+## ToolContext
+
+### Description
+Manages the context of tool invocations.
+
+### Methods
+- **get_auth_response() -> google.protobuf.json_format.Message**
+  Retrieves the authentication response.
+- **request_confirmation(confirmation: str)**
+  Requests confirmation from the user.
+- **request_credential(credential_type: str) -> google.protobuf.json_format.Message**
+  Requests credentials from the user.
+- **search_memory(query: str) -> list**
+  Searches the tool's memory.
+
+### Properties
+- **actions**: list - A list of actions available in the context.
+- **event_actions**: list - A list of event actions available in the context.
+- **function_call_id**: str - The ID of the function call.
+- **invocation_context**: dict - The context of the invocation.
+- **tool_confirmation**: str - The confirmation status of the tool.
+```
+
+--------------------------------
+
+### Function Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Tool for executing arbitrary Python functions.
+
+```APIDOC
+## Function Tool
+
+### Description
+Tool for executing arbitrary Python functions.
+
+### Properties
+- `func`: The Python function to be executed.
+
+### Methods
+- `run_async(args, kwargs)`: Executes the function asynchronously with provided arguments.
+```
+
+--------------------------------
+
+### InvocationContext
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Details about the InvocationContext class, which manages the context of an agent's invocation.
+
+```APIDOC
+## InvocationContext
+
+**Description**: Manages the context of an agent's invocation, including active tools, services, and session information.
+
+**Methods**:
+- `end_invocation()`
+- `increment_llm_call_count()`
+- `model_post_init()`
+
+**Properties**:
+- `active_streaming_tools` (list)
+- `agent` (BaseAgent)
+- `artifact_service` (BaseArtifactService)
+- `branch` (str)
+- `credential_service` (CredentialService)
+- `input_realtime_cache` (RealtimeCache)
+- `invocation_id` (str)
+- `live_request_queue` (LiveRequestQueue)
+- `live_session_resumption_handle` (str)
+- `memory_service` (MemoryService)
+- `output_realtime_cache` (RealtimeCache)
+- `plugin_manager` (PluginManager)
+- `run_config` (RunConfig)
+- `session` (Session)
+- `session_service` (SessionService)
+- `transcription_cache` (TranscriptionCache)
+- `user_content` (UserContent)
+- `app_name` (str)
+- `user_id` (str)
+```
+
+--------------------------------
+
+### UrlContextTool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool for processing URL context, potentially for retrieving or summarizing information from web pages.
+
+```APIDOC
+## UrlContextTool
+
+### Description
+A tool for processing URL context.
+
+### Methods
+- **process_llm_request(request: str) -> str**
+  Processes an LLM request using URL context.
+
+### Properties
+- **description**: str - A description of the tool.
+- **name**: str - The name of the tool.
+```
+
+--------------------------------
+
+### Authenticated Function Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Tool for executing authenticated functions.
+
+```APIDOC
+## Authenticated Function Tool
+
+### Description
+Tool for executing authenticated functions.
+
+### Methods
+- `run_async()`: Executes the authenticated function asynchronously.
+```
+
+--------------------------------
+
+### load_memory Function
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Function to load memory.
+
+```APIDOC
+## load_memory Function
+
+### Description
+Function to load memory.
+```
+
+--------------------------------
+
+### Google Search Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Tool for performing Google searches.
+
+```APIDOC
+## Google Search Tool
+
+### Description
+Tool for performing Google searches.
+
+### Properties
+- `description` (str): Description of the search tool.
+- `name` (str): Name of the search tool.
+
+### Methods
+- `process_llm_request(request)`: Processes an LLM request for Google search.
+```
+
+--------------------------------
+
+### Enterprise Web Search Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+Tool for performing enterprise web searches.
+
+```APIDOC
+## Enterprise Web Search Tool
+
+### Description
+Tool for performing enterprise web searches.
+
+### Properties
+- `description` (str): Description of the search tool.
+- `name` (str): Name of the search tool.
+
+### Methods
+- `process_llm_request(request)`: Processes an LLM request for web search.
+```
+
+--------------------------------
+
+### Crewai Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool that wraps a CrewAI tool.
+
+```APIDOC
+## Crewai Tool
+
+### Description
+A tool that wraps a CrewAI tool.
+
+### Properties
+- `tool`: The underlying CrewAI tool.
+
+### Methods
+- `from_config(config)`: Creates a CrewaiTool instance from a configuration.
+```
+
+--------------------------------
+
+### Tool Predicate
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A predicate used for filtering tools.
+
+```APIDOC
+## Tool Predicate
+
+### Description
+A predicate used for filtering tools.
+```
+
+--------------------------------
+
+### exit_loop Function
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A function to exit a loop.
+
+```APIDOC
+## exit_loop Function
+
+### Description
+A function to exit a loop.
+```
+
+--------------------------------
+
+### Long Running Function Tool
+
+Source: https://google.github.io/adk-docs/api-reference/python/index
+
+A tool that performs long-running operations.
+
+```APIDOC
+## Long Running Function Tool
+
+### Description
+A tool that performs long-running operations.
+
+### Properties
+- `is_long_running` (bool): Indicates that this tool is long-running.
+```
+
+=== COMPLETE CONTENT === This response contains all available snippets from this library. No additional content exists. Do not make further requests.
